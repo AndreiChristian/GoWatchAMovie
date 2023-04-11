@@ -6,6 +6,11 @@ import "./index.css";
 import Home from "./components/Home";
 import Movies from "./components/Movies";
 import ErrorPage from "./components/ErrorPage";
+import Graphql from "./components/Graphql";
+import EditMovies from "./components/EditMovies";
+import ManageCatalog from "./components/ManageCatalog";
+import Login from "./components/Login";
+import Genres from "./components/Genres";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +19,11 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "/movies", element: <Movies /> },
-      
+      { path: "/genres", element: <Genres /> },
+      { path: "/graphql", element: <Graphql /> },
+      { path: "/admin/movies/0", element: <EditMovies /> },
+      { path: "/admin", element: <ManageCatalog /> },
+      { path: "/login", element: <Login /> },
     ],
     errorElement: <ErrorPage />,
   },

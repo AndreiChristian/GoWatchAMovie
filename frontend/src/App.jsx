@@ -10,9 +10,9 @@ const App = () => {
           <h1 className="mt-3">Go Watch A Movie</h1>
         </div>
         <div className="col text-end">
-          <a href="#">
+          <Link to="/login">
             <span className="badge text-bg-success">Login</span>
-          </a>
+          </Link>
         </div>
         <hr className="mb-3" />
       </div>
@@ -21,31 +21,29 @@ const App = () => {
           <nav>
             <div className="list-group">
               <Link
-                to="/home"
-                href="#"
+                to="/"
                 className="list-group-item list-group-item-action"
               >
                 Home
               </Link>
               <Link
                 to="/movies"
-                href="#"
                 className="list-group-item list-group-item-action"
               >
                 Movies
               </Link>
-              <a href="#" className="list-group-item list-group-item-action">
+              <Link to="/genres" className="list-group-item list-group-item-action">
                 Genres
-              </a>
-              <a href="#" className="list-group-item list-group-item-action">
+              </Link>
+              <Link to="/admin/movies/0" className="list-group-item list-group-item-action">
                 Add Movie
-              </a>
-              <a href="#" className="list-group-item list-group-item-action">
+              </Link>
+              <Link to="/admin" className="list-group-item list-group-item-action">
                 Manage Catalog
-              </a>
-              <a href="#" className="list-group-item list-group-item-action">
+              </Link>
+              <Link to="/graphql" className="list-group-item list-group-item-action">
                 GraphQL
-              </a>
+              </Link>
             </div>
           </nav>
         </div>
