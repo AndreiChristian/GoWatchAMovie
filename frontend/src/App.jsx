@@ -1,5 +1,6 @@
 import React from "react";
 import Home from "./components/Home";
+import { Outlet, Link } from "react-router-dom";
 
 const App = () => {
   return (
@@ -19,12 +20,20 @@ const App = () => {
         <div className="col-md-2">
           <nav>
             <div className="list-group">
-              <a href="#" className="list-group-item list-group-item-action">
+              <Link
+                to="/home"
+                href="#"
+                className="list-group-item list-group-item-action"
+              >
                 Home
-              </a>
-              <a href="#" className="list-group-item list-group-item-action">
+              </Link>
+              <Link
+                to="/movies"
+                href="#"
+                className="list-group-item list-group-item-action"
+              >
                 Movies
-              </a>
+              </Link>
               <a href="#" className="list-group-item list-group-item-action">
                 Genres
               </a>
@@ -41,7 +50,7 @@ const App = () => {
           </nav>
         </div>
         <div className="col-md-10">
-          <Home />
+          <Outlet />
         </div>
       </div>
     </div>
