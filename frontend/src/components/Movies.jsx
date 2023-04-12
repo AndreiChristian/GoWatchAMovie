@@ -5,7 +5,7 @@ const Movies = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-     const moviesList = [
+    const moviesList = [
       {
         id: 1,
         title: "Highander",
@@ -32,7 +32,22 @@ const Movies = () => {
       },
     ];
 
-    setMovies(moviesList);
+    const headers = new Headers();
+    headers.append("Content-Type", "application/json");
+
+    const requestOptions = {
+      method: "GET",
+      headers: headers,
+    };
+
+    fetch(`http://localhost:8080/movies`, requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        setMovies(data);
+      })
+      .catch((err) => console.log(err));
+
+    // setMovies(moviesList);
   }, []);
 
   return (
