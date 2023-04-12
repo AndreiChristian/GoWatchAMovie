@@ -4,6 +4,8 @@ import { Outlet, Link } from "react-router-dom";
 
 const App = () => {
   const [jwtToken, setJwtToken] = useState("");
+  const [allertMessage, setAllertMessage] = useState("");
+  const [allertClassName, setAllertClassName] = useState(["d-none"]);
 
   return (
     <div className="container">
@@ -43,7 +45,7 @@ const App = () => {
               >
                 Genres
               </Link>
-              {jwtToken !== "" && ( 
+              {jwtToken !== "" && (
                 <>
                   <Link
                     to="/admin/movies/0"
@@ -69,7 +71,7 @@ const App = () => {
           </nav>
         </div>
         <div className="col-md-10">
-          <Outlet />
+          <Outlet context={{ jwtToken, setJwtToken }} />
         </div>
       </div>
     </div>
